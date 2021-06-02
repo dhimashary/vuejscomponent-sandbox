@@ -19,7 +19,7 @@ Halo semuanya, Vue JS component sandbox ini bisa menjadi salah satu alat kalian 
 ## Props (Passing data down to children component)
 
 1. git checkout "3.props"
-2. Lakukan fetching pada method fetchUsers yang terdapat di App.vue dan simpan valuenya ke state users !
+2. Lakukan fetching pada method fetchUsers yang terdapat di App.vue dan simpan valuenya ke state users ! kalian bisa lakukan request ke https://jsonplaceholder.typicode.com/users
 3. Kirimkan data users menggunakan props ke component "DashboardPage"
 4. Lakukan looping component "UserRow" di component "DashboardPage" sejumlah data users yang diterima di props dan kirimkan props "user" di setiap iterasinya ke component "UserRow". [v-for](https://vuejs.org/v2/api/#v-for)
 5. Referensi: https://vuejs.org/v2/guide/components-props.html
