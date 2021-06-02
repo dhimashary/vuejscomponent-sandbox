@@ -1,19 +1,35 @@
 <template>
-  <DashboardPage></DashboardPage>
+  <div>
+    <Navbar></Navbar>
+    <DashboardPage v-if="currentPage === 'dashboard'"></DashboardPage>
+    <AboutPage v-else-if="currentPage === 'about'"></AboutPage>
+    <div v-else>
+      <h1>404 Page not found</h1>
+    </div>
+  </div>
 </template>
 
 <script>
 import axios from "axios"
+import Navbar from "./components/Navbar"
+import AboutPage from "./components/AboutPage"
 import DashboardPage from "./components/DashboardPage"
 
 export default {
   name: "App",
+  data () {
+    return {
+      currentPage: "dashboard"
+    }
+  },
   components: {
-    DashboardPage
+    DashboardPage,
+    AboutPage,
+    Navbar
   },
   methods: {
-    fetchUsers() {
-      // isi function ini untuk fetch ke https://jsonplaceholder.typicode.com/users
+    changePage(page) {
+      this.currentPage = page
     }
   },
   created() {}
